@@ -1,12 +1,9 @@
 package com.vorobew4you.crypto.Integration;
 
-import com.vorobew4you.crypto.Model.TokenName;
-import com.vorobew4you.crypto.Model.TradingPair;
-import com.vorobew4you.crypto.Repository.TokenNameRepository;
-import com.vorobew4you.crypto.Repository.TradingPairRepository;
+import com.vorobew4you.crypto.model.TradingPair;
+import com.vorobew4you.crypto.repository.TokenNameRepository;
+import com.vorobew4you.crypto.repository.TradingPairRepository;
 
-import java.util.Arrays;
-import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Set;
 
@@ -74,9 +71,6 @@ public class SearchInPortal {
                                 System.out.println(tp1);
                                 System.out.println(tp2.getFirst());
 
-                                System.out.println(priceDivision(tp.getPrice(), tp1.getPrice()));
-                                System.out.println(priceDivision(tp.getPrice(), tp2.getFirst().getPrice()));
-                                System.out.println(priceDivision(tp1.getPrice(), tp2.getFirst().getPrice()));
                             }
                         } catch (Exception e) {}
 

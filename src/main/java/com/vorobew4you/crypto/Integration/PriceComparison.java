@@ -1,10 +1,10 @@
 package com.vorobew4you.crypto.Integration;
 
 import com.vorobew4you.crypto.Controller.TradingPairController;
-import com.vorobew4you.crypto.Model.ResultView;
-import com.vorobew4you.crypto.Model.TradingPair;
+import com.vorobew4you.crypto.model.ResultView;
+import com.vorobew4you.crypto.model.TradingPair;
 
-import java.time.LocalDateTime;
+import java.math.BigDecimal;
 import java.util.LinkedList;
 
 public class PriceComparison {
@@ -34,13 +34,13 @@ public class PriceComparison {
                 ResultView resultView = new ResultView();
                 TradingPairController tpc = new TradingPairController();
                 if (tpFirst.getName().equals(tpSecond.getName())) {
-                    Double firstPrice = tpFirst.getPrice();
-                    Double secondPrice = tpSecond.getPrice();
+                    BigDecimal firstPrice = tpFirst.getPrice();
+                    BigDecimal secondPrice = tpSecond.getPrice();
 
-                    resultView.setPriceDifference(Math.abs(firstPrice - secondPrice));
-                    resultView.setPercentPriceDifference(Math.abs(
-                            ((firstPrice - secondPrice) / secondPrice) * 100
-                    ));
+//                    resultView.setPriceDifference(Math.abs(firstPrice - secondPrice));
+//                    resultView.setPercentPriceDifference(Math.abs(
+//                            ((firstPrice - secondPrice) / secondPrice) * 100
+//                    ));
 
 
                     resultView.setPlatformName(
@@ -49,7 +49,7 @@ public class PriceComparison {
                     resultView.setPairName(tpFirst.getName());
                     resultView.setFirstPrice(firstPrice);
                     resultView.setSecondPrice(secondPrice);
-                    resultView.setUpdatedAt(LocalDateTime.now());
+//                    resultView.setUpdatedAt(Instant.now());
 
                     resultViewsList.add(resultView);
                 }
